@@ -12,13 +12,13 @@
 
 
 
-#pragma config FOSC = XT
+#pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = ON
 #pragma config CP = OFF
 #pragma config CPD = OFF
-#pragma config BOREN = OFF
+#pragma config BOREN = ON
 #pragma config IESO = OFF
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
@@ -2525,7 +2525,7 @@ int jg;
 void carrera (void);
 void delay_ms (unsigned int dms);
 void db (void);
-void db2 (void);
+
 void set (void);
 void mario (void);
 void MR (void);
@@ -2534,11 +2534,15 @@ void winner1 (void);
 void MRS (void);
 void MVS (void);
 void winner2 (void);
+void carrerauno (void);
 
 void main(void) {
     set();
     AQUI:
+
     db();
+    carrerauno();
+    n=0;
     goto AQUI;
     return;
 }
@@ -2559,13 +2563,14 @@ void carrera(void){
     PORTDbits.RD3 = 0;
     PORTDbits.RD2 = 0;
     PORTDbits.RD1 = 1;
-    PORTC = 0x04;
+    PORTC = 0x14;
     delay_ms(500);
 
     PORTDbits.RD3 = 0;
     PORTDbits.RD2 = 0;
     PORTDbits.RD1 = 0;
     PORTC = 0x77;
+    delay_ms(500);
 }
 
 void delay_ms(unsigned int dms){
@@ -2581,11 +2586,12 @@ void db (void){
         }
         else {
             n = 1;
+            jg = 1;
         }
     }
-    db2();
-    carrera();
-    mario();
+
+
+
 }
 
 void db2 (void){
@@ -2594,8 +2600,8 @@ void db2 (void){
             n = 1;
         }
         else {
-            n = 0;
-            jg = 1;
+            n = 0x00;
+            jg = 0x01;
         }
     }
 }
@@ -2610,7 +2616,13 @@ void set (void){
     PORTA = 0x00;
     PORTB = 0x00;
     PORTC = 0x00;
-    n = 0x00;
+    PORTAbits.RA7 = 0;
+    PORTDbits.RD0 = 0;
+    PORTDbits.RD4 = 0;
+    racer1 = 0;
+    racer2 = 0;
+    n = 0;
+    jg = 1;
 }
 
 void mario (void){
@@ -2714,7 +2726,7 @@ void winner1 (void){
     PORTA = 0x00;
     jg = 0;
     PORTDbits.RD0 = 1;
-    PORTC = 0x04;
+    PORTC = 0x14;
 }
 
 void winner2 (void){
@@ -2722,4 +2734,10 @@ void winner2 (void){
     jg = 0;
     PORTDbits.RD4 = 1;
     PORTC = 0xB3;
+}
+
+void carrerauno (void){
+    if (PORTDbits.RD7 == 0){
+        carrera();
+    }
 }

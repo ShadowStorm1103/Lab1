@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\lab1dig2.X.production.sym \
   --cmf=dist/default/production\lab1dig2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\ddele\AppData\Local\Temp\s8d8.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\ddele\AppData\Local\Temp\s7k8.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/lab1dig2.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\ddele\AppData\Local\Temp\s8d8.o \
+  -DENTRY=2 -k C:\Users\ddele\AppData\Local\Temp\s7k8.o \
   dist/default/production\lab1dig2.X.production.o 
 
 Object code version is 3.11
@@ -28,46 +28,33 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ddele\AppData\Local\Temp\s8d8.o
+C:\Users\ddele\AppData\Local\Temp\s7k8.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\lab1dig2.X.production.o
-                cinit                               7F6      7F6        A      FEC       0
-                text12                              6B5      6B5       29      D6A       0
-                text11                              744      744       38      E88       0
-                text10                              65A      65A       19      CB4       0
-                text9                               627      627        9      C4E       0
-                text8                               6DE      6DE       33      DBC       0
-                text7                               630      630        9      C60       0
-                text6                               77C      77C       3D      EF8       0
-                text5                               711      711       33      E22       0
-                text4                               7B9      7B9       3D      F72       0
-                text3                               673      673       1E      CE6       0
-                text2                               691      691       24      D22       0
-                text1                               647      647       13      C8E       0
-                maintext                            639      639        E      C72       0
-                cstackCOMMON                         76       76        6       70       1
-                bssCOMMON                            70       70        6       70       1
+                cinit                               7F8      7F8        8      FF0       0
+                text5                               78E      78E       29      F1C       0
+                text4                               7B7      7B7       41      F6E       0
+                text3                               738      738        C      E70       0
+                text2                               759      759       19      EB2       0
+                text1                               772      772       1C      EE4       0
+                maintext                            744      744       15      E88       0
+                cstackCOMMON                         70       70        6       70       1
+                bssCOMMON                            76       76        4       70       1
+                nvCOMMON                             7A       7A        2       70       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              0        0        3         0
-                cinit                               7F6      7F6        A         0
-                text12                              6B5      6B5       29         0
-                text11                              744      744       38         0
-                text10                              65A      65A       19         0
-                text9                               627      627        9         0
-                text8                               6DE      6DE       33         0
-                text7                               630      630        9         0
-                text6                               77C      77C       3D         0
-                text5                               711      711       33         0
-                text4                               7B9      7B9       3D         0
-                text3                               673      673       1E         0
-                text2                               691      691       24         0
-                text1                               647      647       13         0
-                maintext                            639      639        E         0
+                cinit                               7F8      7F8        8         0
+                text5                               78E      78E       29         0
+                text4                               7B7      7B7       41         0
+                text3                               738      738        C         0
+                text2                               759      759       19         0
+                text1                               772      772       1C         0
+                maintext                            744      744       15         0
 
         CLASS   STRCODE        
 
@@ -78,8 +65,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         76       76        6         1
-                bssCOMMON                            70       70        6         1
+                cstackCOMMON                         70       70        6         1
+                bssCOMMON                            76       76        4         1
+                nvCOMMON                             7A       7A        2         1
 
         CLASS   BANK0          
 
@@ -114,21 +102,14 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                bssCOMMON                      000070  00000C  00007C        70       1  COMMON      1
-                text9                          000627  000009  000630       C4E       0  CODE        2
-                text7                          000630  000009  000639       C60       0  CODE        2
-                maintext                       000639  00000E  000647       C72       0  CODE        2
-                text1                          000647  000013  00065A       C8E       0  CODE        2
-                text10                         00065A  000019  000673       CB4       0  CODE        2
-                text3                          000673  00001E  000691       CE6       0  CODE        2
-                text2                          000691  000024  0006B5       D22       0  CODE        2
-                text12                         0006B5  000029  0006DE       D6A       0  CODE        2
-                text8                          0006DE  000033  000711       DBC       0  CODE        2
-                text5                          000711  000033  000744       E22       0  CODE        2
-                text11                         000744  000038  00077C       E88       0  CODE        2
-                text6                          00077C  00003D  0007B9       EF8       0  CODE        2
-                text4                          0007B9  00003D  0007F6       F72       0  CODE        2
-                cinit                          0007F6  00000A  000800       FEC       0  CODE        2
+                cstackCOMMON                   000070  00000C  00007C        70       1  COMMON      1
+                text3                          000738  00000C  000744       E70       0  CODE        2
+                maintext                       000744  000015  000759       E88       0  CODE        2
+                text2                          000759  000019  000772       EB2       0  CODE        2
+                text1                          000772  00001C  00078E       EE4       0  CODE        2
+                text5                          00078E  000029  0007B7       F1C       0  CODE        2
+                text4                          0007B7  000041  0007F8       F6E       0  CODE        2
+                cinit                          0007F8  000008  000800       FF0       0  CODE        2
                 config                         002007  000002  002009      400E       0  CONFIG      2
 
 
@@ -139,13 +120,13 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-0626            624           2
+        CODE             0003-0737            735           2
                          0800-1FFF            800
         COMMON           007C-007D              2           1
-        CONST            0003-0626            100           2
+        CONST            0003-0737            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-0626            100           2
+        ENTRY            0003-0737            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
@@ -157,20 +138,17 @@ UNUSED ADDRESS RANGES
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
-        STRCODE          0003-0626            624           2
+        STRCODE          0003-0737            735           2
                          0800-1FFF           1800
-        STRING           0003-0626            100           2
+        STRING           0003-0737            100           2
                          0800-1FFF            100
 
                                   Symbol Table
 
 _ANSEL                   (abs)        0188
 _ANSELH                  (abs)        0189
-_MR                      text6        077C
-_MRS                     text5        0711
-_MV                      text4        07B9
-_MVS                     text8        06DE
 _PORTA                   (abs)        0005
+_PORTAbits               (abs)        0005
 _PORTB                   (abs)        0006
 _PORTC                   (abs)        0007
 _PORTDbits               (abs)        0008
@@ -179,11 +157,11 @@ _TRISB                   (abs)        0086
 _TRISC                   (abs)        0087
 _TRISD                   (abs)        0088
 __CFG_BOR4V$BOR40V       (abs)        0000
-__CFG_BOREN$OFF          (abs)        0000
+__CFG_BOREN$ON           (abs)        0000
 __CFG_CP$OFF             (abs)        0000
 __CFG_CPD$OFF            (abs)        0000
 __CFG_FCMEN$OFF          (abs)        0000
-__CFG_FOSC$XT            (abs)        0000
+__CFG_FOSC$INTRC_CLKOUT  (abs)        0000
 __CFG_IESO$OFF           (abs)        0000
 __CFG_LVP$OFF            (abs)        0000
 __CFG_MCLRE$ON           (abs)        0000
@@ -209,6 +187,7 @@ __Hidloc                 idloc        0000
 __Hinit                  init         0000
 __Hintentry              intentry     0000
 __Hmaintext              maintext     0000
+__HnvCOMMON              nvCOMMON     0000
 __Hpowerup               powerup      0000
 __Hram                   ram          0000
 __Hreset_vec             reset_vec    0000
@@ -229,7 +208,7 @@ __Lbank1                 bank1        0000
 __Lbank2                 bank2        0000
 __Lbank3                 bank3        0000
 __LbssCOMMON             bssCOMMON    0000
-__Lcinit                 cinit        07F6
+__Lcinit                 cinit        07F8
 __Lclrtext               clrtext      0000
 __Lcode                  code         0000
 __Lcommon                common       0000
@@ -242,6 +221,7 @@ __Lidloc                 idloc        0000
 __Linit                  init         0000
 __Lintentry              intentry     0000
 __Lmaintext              maintext     0000
+__LnvCOMMON              nvCOMMON     0000
 __Lpowerup               powerup      0000
 __Lram                   ram          0000
 __Lreset_vec             reset_vec    0000
@@ -265,66 +245,43 @@ ___latbits               (abs)        0002
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
-__end_of_MR              text6        07B9
-__end_of_MRS             text5        0744
-__end_of_MV              text4        07F6
-__end_of_MVS             text8        0711
 __end_of__initialization cinit        07FC
-__end_of_carrera         text11       077C
-__end_of_db              text2        06B5
-__end_of_db2             text10       0673
-__end_of_delay_ms        text12       06DE
-__end_of_main            maintext     0647
-__end_of_mario           text3        0691
-__end_of_set             text1        065A
-__end_of_winner1         text7        0639
-__end_of_winner2         text9        0630
-__initialization         cinit        07F6
-__pbssCOMMON             bssCOMMON    0070
-__pcstackCOMMON          cstackCOMMON 0076
-__pmaintext              maintext     0639
-__ptext1                 text1        0647
-__ptext10                text10       065A
-__ptext11                text11       0744
-__ptext12                text12       06B5
-__ptext2                 text2        0691
-__ptext3                 text3        0673
-__ptext4                 text4        07B9
-__ptext5                 text5        0711
-__ptext6                 text6        077C
-__ptext7                 text7        0630
-__ptext8                 text8        06DE
-__ptext9                 text9        0627
-__size_of_MR             (abs)        0000
-__size_of_MRS            (abs)        0000
-__size_of_MV             (abs)        0000
-__size_of_MVS            (abs)        0000
+__end_of_carrera         text4        07F8
+__end_of_carrerauno      text3        0744
+__end_of_db              text2        0772
+__end_of_delay_ms        text5        07B7
+__end_of_main            maintext     0759
+__end_of_set             text1        078E
+__initialization         cinit        07F8
+__pbssCOMMON             bssCOMMON    0076
+__pcstackCOMMON          cstackCOMMON 0070
+__pmaintext              maintext     0744
+__pnvCOMMON              nvCOMMON     007A
+__ptext1                 text1        0772
+__ptext2                 text2        0759
+__ptext3                 text3        0738
+__ptext4                 text4        07B7
+__ptext5                 text5        078E
 __size_of_carrera        (abs)        0000
+__size_of_carrerauno     (abs)        0000
 __size_of_db             (abs)        0000
-__size_of_db2            (abs)        0000
 __size_of_delay_ms       (abs)        0000
 __size_of_main           (abs)        0000
-__size_of_mario          (abs)        0000
 __size_of_set            (abs)        0000
-__size_of_winner1        (abs)        0000
-__size_of_winner2        (abs)        0000
-_carrera                 text11       0744
-_db                      text2        0691
-_db2                     text10       065A
-_delay_ms                text12       06B5
-_jg                      bssCOMMON    0070
-_main                    maintext     0639
-_mario                   text3        0673
-_n                       bssCOMMON    0072
-_racer1                  bssCOMMON    0075
-_racer2                  bssCOMMON    0074
-_set                     text1        0647
-_winner1                 text7        0630
-_winner2                 text9        0627
+_carrera                 text4        07B7
+_carrerauno              text3        0738
+_db                      text2        0759
+_delay_ms                text5        078E
+_jg                      nvCOMMON     007A
+_main                    maintext     0744
+_n                       bssCOMMON    0076
+_racer1                  bssCOMMON    0079
+_racer2                  bssCOMMON    0078
+_set                     text1        0772
 btemp                    (abs)        007E
-delay_ms@dms             cstackCOMMON 0076
-delay_ms@i               cstackCOMMON 0078
-delay_ms@j               cstackCOMMON 007A
+delay_ms@dms             cstackCOMMON 0070
+delay_ms@i               cstackCOMMON 0072
+delay_ms@j               cstackCOMMON 0074
 end_of_initialization    cinit        07FC
 intlevel0                functab      0000
 intlevel1                functab      0000
@@ -334,7 +291,7 @@ intlevel4                functab      0000
 intlevel5                functab      0000
 reset_vec                reset_vec    0000
 start                    init         0000
-start_initialization     cinit        07F6
+start_initialization     cinit        07F8
 wtemp0                   (abs)        007E
 
 
@@ -342,7 +299,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 43 in file "lab1.c"
+		line 44 in file "lab1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -361,8 +318,9 @@ FUNCTION INFORMATION:
       Temps:          0       0       0       0       0
       Totals:         0       0       0       0       0
 Total ram usage:        0 bytes
- Hardware stack levels required when called:    5
+ Hardware stack levels required when called:    3
  This function calls:
+		_carrerauno
 		_db
 		_set
  This function is called by:
@@ -372,7 +330,7 @@ Total ram usage:        0 bytes
 
  *************** function _set *****************
  Defined at:
-		line 108 in file "lab1.c"
+		line 114 in file "lab1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -401,252 +359,7 @@ Total ram usage:        0 bytes
 
  *************** function _db *****************
  Defined at:
-		line 82 in file "lab1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, btemp+1, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       0       0       0       0
-      Totals:         0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		_carrera
-		_db2
-		_mario
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _mario *****************
- Defined at:
-		line 121 in file "lab1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       0       0       0       0
-      Totals:         0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		_MR
-		_MV
- This function is called by:
-		_db
- This function uses a non-reentrant model
-
-
- *************** function _MV *****************
- Defined at:
-		line 159 in file "lab1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          2       0       0       0       0
-      Totals:         2       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_MRS
-		_winner2
- This function is called by:
-		_mario
- This function uses a non-reentrant model
-
-
- *************** function _MRS *****************
- Defined at:
-		line 200 in file "lab1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          2       0       0       0       0
-      Totals:         2       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		_winner1
- This function is called by:
-		_MV
- This function uses a non-reentrant model
-
-
- *************** function _MR *****************
- Defined at:
-		line 135 in file "lab1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          2       0       0       0       0
-      Totals:         2       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_MVS
-		_winner1
- This function is called by:
-		_mario
- This function uses a non-reentrant model
-
-
- *************** function _winner1 *****************
- Defined at:
-		line 218 in file "lab1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       0       0       0       0
-      Totals:         0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_MR
-		_MRS
- This function uses a non-reentrant model
-
-
- *************** function _MVS *****************
- Defined at:
-		line 182 in file "lab1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          2       0       0       0       0
-      Totals:         2       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		_winner2
- This function is called by:
-		_MR
- This function uses a non-reentrant model
-
-
- *************** function _winner2 *****************
- Defined at:
-		line 225 in file "lab1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       0       0       0       0
-      Totals:         0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_MV
-		_MVS
- This function uses a non-reentrant model
-
-
- *************** function _db2 *****************
- Defined at:
-		line 96 in file "lab1.c"
+		line 87 in file "lab1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -669,13 +382,43 @@ Total ram usage:        0 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_db
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _carrerauno *****************
+ Defined at:
+		line 244 in file "lab1.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_carrera
+ This function is called by:
+		_main
  This function uses a non-reentrant model
 
 
  *************** function _carrera *****************
  Defined at:
-		line 51 in file "lab1.c"
+		line 55 in file "lab1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -699,13 +442,13 @@ Total ram usage:        0 bytes
  This function calls:
 		_delay_ms
  This function is called by:
-		_db
+		_carrerauno
  This function uses a non-reentrant model
 
 
  *************** function _delay_ms *****************
  Defined at:
-		line 76 in file "lab1.c"
+		line 81 in file "lab1.c"
  Parameters:    Size  Location     Type
   dms             2    0[COMMON] unsigned int 
  Auto vars:     Size  Location     Type
@@ -738,24 +481,17 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initialization		CODE           	07F6	0000	7
+		__initialization		CODE           	07F8	0000	5
 
-shared estimated size: 7
+shared estimated size: 5
 
 lab1.c
-		_winner1       		CODE           	0630	0000	10
-		_MRS           		CODE           	0711	0000	52
-		_carrera       		CODE           	0744	0000	57
-		_db            		CODE           	0691	0000	37
-		_main          		CODE           	0639	0000	15
-		_MVS           		CODE           	06DE	0000	52
-		_mario         		CODE           	0673	0000	31
-		_db2           		CODE           	065A	0000	26
-		_set           		CODE           	0647	0000	20
-		_MR            		CODE           	077C	0000	62
-		_MV            		CODE           	07B9	0000	62
-		_winner2       		CODE           	0627	0000	10
-		_delay_ms      		CODE           	06B5	0000	42
+		_carrera       		CODE           	07B7	0000	66
+		_db            		CODE           	0759	0000	26
+		_carrerauno    		CODE           	0738	0000	13
+		_main          		CODE           	0744	0000	22
+		_set           		CODE           	0772	0000	29
+		_delay_ms      		CODE           	078E	0000	42
 
-lab1.c estimated size: 476
+lab1.c estimated size: 198
 
