@@ -23,10 +23,19 @@
 
 #include <xc.h>
 
+//********************************************************************************
+//Variables
+//********************************************************************************
+
 unsigned char racer1;
 unsigned char racer2;
 int n; 
 int jg;
+
+//********************************************************************************
+//Prototipo de funciones 
+//********************************************************************************
+
 void carrera (void);
 void delay_ms (unsigned int dms);
 void db (void);
@@ -41,6 +50,10 @@ void MVS (void);
 void winner2 (void); 
 void carrerauno (void);
 
+//********************************************************************************
+//Programa principal 
+//********************************************************************************
+
 void main(void) {
     set();
     AQUI:
@@ -52,8 +65,12 @@ void main(void) {
     return;
 }
 
-void carrera(void){
-    PORTDbits.RD3 = 1;
+//********************************************************************************
+//Funciones 
+//********************************************************************************
+
+void carrera(void){ // funcion que despliega el semaforo y los valores de inicio en el 7 segmentos 
+    PORTDbit1s.RD3 = 1;
     PORTDbits.RD2 = 1;
     PORTDbits.RD1 = 1;
     PORTC = 0xB6;
@@ -78,13 +95,13 @@ void carrera(void){
     delay_ms(500);
 }
 
-void delay_ms(unsigned int dms){
+void delay_ms(unsigned int dms){ // funcion de delay utilizada para el siete segmentos 
     for(int i = 0; i<dms; i++){
         for(int j = 0; j<255; j++);
     }
 }
 
-void db (void){
+void db (void){ // funcion de debouncing para evitar confuciones entre botonasos 
     while (n == 0){
         if (PORTDbits.RD7 == 1){
             n = 0;
@@ -99,7 +116,7 @@ void db (void){
 //    db2();
 }
 
-void db2 (void){
+void db2 (void){// doble debouncing (no se utilizo)
     while (n == 1){
         if (PORTDbits.RD7 == 0){
             n = 1;
@@ -111,7 +128,7 @@ void db2 (void){
     }
 }
 
-void set (void){
+void set (void){//Configuracion de los pines
     ANSEL = 0;
     ANSELH = 0;
     TRISA = 0x00;
@@ -130,7 +147,7 @@ void set (void){
     jg = 1;
 }
 
-void mario (void){
+void mario (void){// lectura de botones para seleccionar cual corredor aumenta 
     while (jg == 1){
         if (PORTDbits.RD6 == 0){
             MR();
@@ -144,7 +161,7 @@ void mario (void){
     }
 }
 
-void MR(void){
+void MR(void){// Verificacion de que sea un botonaso y no se quede apachado el boton del jugador 1
     if (PORTDbits.RD6 == 1){
         if (racer1 == 0){
             racer1 = 1;
@@ -168,7 +185,7 @@ void MR(void){
     
 }
 
-void MV(void){
+void MV(void){// Verificacion de que sea un botonaso y no se quede apachado el boton del jugador 2
     if (PORTDbits.RD5 == 1){
         if (racer2 == 0){
             racer2 = 1;
@@ -191,7 +208,7 @@ void MV(void){
     }
 }
 
-void MVS (void){
+void MVS (void){// si el boton del jugador 1 se queda apachado permitir que el jugador 2 precione y avance 
     if (PORTDbits.RD5){
         if (racer2 == 0){
             racer2 = 1;
@@ -209,7 +226,7 @@ void MVS (void){
     }
 }
 
-void MRS (void){
+void MRS (void){//si el boton del jugador 2 se queda apachado permitir que el jugador 1 precione y avance
     if (PORTDbits.RD6 == 1){
         if (racer1 == 0){
             racer1 = 1;
@@ -227,21 +244,21 @@ void MRS (void){
     }
 }
 
-void winner1 (void){
+void winner1 (void){//Si el jugador 1 gana mostrar en led y parar el juego 
     PORTA = 0x00;
     jg = 0; 
     PORTDbits.RD0 = 1;
     PORTC = 0x14;
 }
 
-void winner2 (void){
+void winner2 (void){//Si el jugador 1 gana mostrar en led y parar el juego 
     PORTB = 0x00;
     jg = 0; 
     PORTDbits.RD4 = 1;
     PORTC = 0xB3;
 }
 
-void carrerauno (void){
+void carrerauno (void){//condicional para iniciar el conteo de inicio del juego 
     if (PORTDbits.RD7 == 0){
         carrera();
     }
